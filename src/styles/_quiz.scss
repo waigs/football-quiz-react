@@ -1,0 +1,17 @@
+.headline {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.quiz {
+  background: $white;
+  margin: 0 auto;
+  padding: 20px;
+  @include bordered(1px, solid, #cccccc);
+  ul {
+    margin: 0;
+  }
+  label {
+    padding-left: 10px;
+  }
+}
