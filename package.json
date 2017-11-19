@@ -21,7 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://myusername.github.io/my-app",
+  "homepage": "https://waigs.github.io/football-quiz-react/",
   "devDependencies": {
     "foundation-sites": "^6.4.4-rc1",
     "node-sass-chokidar": "0.0.3"
