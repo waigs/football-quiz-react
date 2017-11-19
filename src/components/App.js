@@ -99,7 +99,7 @@ class App extends Component {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'No support' });
+      this.setState({ result: 'No Team' });
     }
   }
 
@@ -124,7 +124,9 @@ class App extends Component {
     return (
       <div className="grid-container">
         <h1 className="headline">Which team do you support?</h1>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        <div className="grid-x grid-margin-x">
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
+        </div>
       </div>
     );
   }

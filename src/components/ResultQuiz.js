@@ -1,11 +1,24 @@
 import React from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 const Result = props => {
   return (
-    <p>
-      We think you support <strong>{props.quizResult}</strong>
-    </p>
+    <CSSTransitionGroup
+      className="quiz large-6"
+      component="div"
+      transitionName="fade"
+      transitionEnterTimeout={800}
+      transitionLeaveTimeout={500}
+      transitionAppear
+      transitionAppearTimeout={500}
+    >
+      <div key={props.quizId}>
+        <p className="text-center">
+          We think you support <strong>{props.quizResult}!</strong>
+        </p>
+      </div>
+    </CSSTransitionGroup>
   );
 };
 

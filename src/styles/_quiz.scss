@@ -7,6 +7,7 @@
   background: $white;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
   @include bordered(1px, solid, #cccccc);
   ul {
     margin: 0;
@@ -14,4 +15,37 @@
   label {
     padding-left: 10px;
   }
+}
+
+//fade
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.3s;
+}
+
+.fade-leave {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }

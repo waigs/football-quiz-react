@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransitionGroup } from 'react-transition-group';
 import Question from './Question';
 import CounterQuiz from './CounterQuiz';
 import OptionsAnswers from './OptionsAnswers';
@@ -19,15 +20,23 @@ const Quiz = props => {
   };
 
   return (
-    <div className="grid-x grid-margin-x">
-      <div className="quiz large-6">
+    <CSSTransitionGroup
+      className="quiz large-6"
+      component="div"
+      transitionName="fade"
+      transitionEnterTimeout={800}
+      transitionLeaveTimeout={500}
+      transitionAppear
+      transitionAppearTimeout={500}
+    >
+      <div key={props.quizId}>
         <CounterQuiz counter={props.quizId} total={props.quizTotal} />
         <Question headline={props.question} />
         <ul className="no-bullet">
           {props.optionsAnswers.map(renderOptionsAnswers)}
         </ul>
       </div>
-    </div>
+    </CSSTransitionGroup>
   );
 };
 
